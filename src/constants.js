@@ -1,51 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-/*
-  Header
-    -logo(title)
-    -list items(right side)
-    -cart
-  Body
-    -SearchBar
-    -restaurantlist
-      -Restaurant card (many cards)
-        -Image
-        -Name
-        -rating
-        -cuisines
-  Footer
-    -links
-    -copyright
-  */
-const Title = () => {
-  return (
-    <a href="/">
-      <img
-        className="logo"
-        src="https://yt3.ggpht.com/ytc/AKedOLSpK3T_2RxkMYb-pk9oENQB0NvYpeOdXRgQe8i5=s800-c-k-c0x00ffffff-no-rj"
-        alt="logo"
-      />
-    </a>
-  );
-};
+export const IMG_CDN_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
-const Header = () => {
-  return (
-    <div className="header">
-      <Title />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const restaurantList = [
+export const restaurantList = [
   {
     info: {
       id: "413821",
@@ -610,54 +566,3 @@ const restaurantList = [
     },
   },
 ];
-
-const burgerKing = {
-  image:
-    "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf",
-  rating: 4.2,
-  name: "Burger king",
-  cuisines: ["Burgers", "American"],
-};
-
-const RestaurantCard = ({ name, cloudinaryImageId, avgRating, cuisines }) => {
-  return (
-    <div className="card">
-      <img
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        alt="BurgerKing image"
-      />
-      <h2>{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
-      <h4>{avgRating} Stars.</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
-        return <RestaurantCard {...restaurant.info} key={restaurant.info.id} />;
-      })}
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <h4 style={{ color: "red" }}>Footer</h4>;
-};
-
-const AppLayout = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
