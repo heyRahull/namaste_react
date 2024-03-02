@@ -48,4 +48,4 @@ Passing props through component composition:` <ChildComponent>{children}</ChildC
 
 ### 40. What is a Config Driven UI?
 
-A Config Driven UI is an approach to building user interfaces where the UI structure and behavior are defined by configuration files or data rather than hardcoding them in the application code. Configuration files typically contain settings, options, and rules that determine the layout, styling, and behavior of UI components. This approach allows for greater flexibility, reusability, and maintainability of UI components, as changes can be made easily by updating the configuration without modifying the underlying code.
+A Config Driven UI is an approach to building user interfaces where the UI structure and behavior are defined by configuration files or data rather than hardcoding them in the application code. Configuration files typically contain settings, options, and rules that determine the layout, styling, and behavior of UI components. This approach allows for greater flexibility, reusability, and maintainability of UI components, as changes can be made easily by updating the configuration without modifying the underlying code..
