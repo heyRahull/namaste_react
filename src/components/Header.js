@@ -1,13 +1,10 @@
 import { useState } from "react";
+import Logo from "../assets/food_villa_logo.png";
 
 const Title = () => {
   return (
     <a href="/">
-      <img
-        className="logo"
-        src="https://yt3.ggpht.com/ytc/AKedOLSpK3T_2RxkMYb-pk9oENQB0NvYpeOdXRgQe8i5=s800-c-k-c0x00ffffff-no-rj"
-        alt="logo"
-      />
+      <img className="logo" src={Logo} alt="logo" />
     </a>
   );
 };

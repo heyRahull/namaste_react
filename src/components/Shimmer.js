@@ -1,7 +1,13 @@
 const Shimmer = () => {
   return (
     <>
-      <h1>Loading Shimmer........</h1>
+      <div className="restaurant-list">
+        {Array(10)
+          .fill("")
+          .map((e) => (
+            <div className="shimmer-card"></div>
+          ))}
+      </div>
     </>
   );
 };
