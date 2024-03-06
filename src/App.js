@@ -3,6 +3,12 @@ import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import About from "../src/components/About";
+import Contact from "./components/Contact";
+import Error from "./components/Error";
+import { Outlet } from "react-router-dom";
+import RestMenu from "./components/RestMenu";
 
 /*
   Header
@@ -26,10 +32,37 @@ const AppLayout = () => {
   return (
     <>
       <Header />
-      <Body />
+      <Outlet />
+      {/* <Body /> */}
       <Footer />
     </>
   );
 };
+
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestMenu />,
+      },
+    ],
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={appRouter} />);

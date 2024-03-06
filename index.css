@@ -12,8 +12,10 @@
   margin-top: 32px;
 }
 
-.nav-items > ul > li {
+.nav-items > ul > li > a {
   padding: 10px;
+  text-decoration: none;
+  color: inherit;
 }
 
 .logo {
