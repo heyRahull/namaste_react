@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Logo from "../assets/food_villa_logo.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Title = () => {
   return (
@@ -12,26 +13,28 @@ const Title = () => {
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <div className="flex justify-between px-4 bg-pink-200 shadow-lg ">
       <Title />
       <div className="flex">
         <ul className="flex py-10">
-          <li className="px-2">
-            <Link to="/">Home</Link>
-          </li>
-          <li className="px-2">
-            <Link to="/about">About</Link>{" "}
-          </li>
-          <li className="px-2">
-            <Link to="/contact">Contact</Link>
-          </li>
-          <li className="px-2">
-            <Link to="/">Cart</Link>
-          </li>
-          <li className="px-2">
-            <Link to="/instamart">Instamart</Link>
-          </li>
+          <Link to="/">
+            <li className="px-2">Home</li>
+          </Link>
+          <Link to="/about">
+            <li className="px-2">About </li>
+          </Link>
+          <Link to="/contact">
+            <li className="px-2">Contact</li>
+          </Link>
+          <Link to="/instamart">
+            <li className="px-2">Instamart</li>
+          </Link>
+          <Link to="/cart">
+            <li className="px-2">Cart- {cartItems.length} items</li>
+          </Link>
         </ul>
         {isLoggedIn ? (
           <button

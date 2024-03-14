@@ -24,8 +24,6 @@ const Body = () => {
 
   // not render component (Early return)
   if (!allRestaurants) return null;
-  // if (filterRestaurants?.length === 0)
-  //   return <h1>No Restraunt match your Filter!!</h1>;
 
   return allRestaurants.length == 0 ? (
     <Shimmer />
